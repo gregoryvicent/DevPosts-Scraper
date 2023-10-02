@@ -16,6 +16,5 @@ class DevCommunitySpider(scrapy.Spider):
             "date": response.css("time::attr(datetime)").get(),
             "link": response.url
         }
-        print(data_post)
         yield scrapy.Request("https://dev.to/", callback=self.parse)
 
