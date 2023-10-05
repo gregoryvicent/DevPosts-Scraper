@@ -6,7 +6,8 @@
 import scrapy
 
 
-class DevpostsItem(scrapy.Item):
+class DevCommunityPostItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    link = scrapy.Field()
+    date = scrapy.Field()
