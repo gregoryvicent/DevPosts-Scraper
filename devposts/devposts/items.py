@@ -11,3 +11,10 @@ class DevCommunityPostItem(scrapy.Item):
     title = scrapy.Field()
     link = scrapy.Field()
     date = scrapy.Field()
+
+
+class PostItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    date = scrapy.Field()
+
