@@ -15,6 +15,7 @@ class DevCommunityPostItem(scrapy.Item):
 
 class PostItem(scrapy.Item):
     title = scrapy.Field()
+    image = scrapy.Field()
     link = scrapy.Field()
     date = scrapy.Field()
 
