@@ -21,6 +21,12 @@ class DevCommunitySpider(scrapy.Spider):
         post.add_css("title", "h1::text")
         post.add_css("date", "time::attr(datetime)")
         post.add_value("link", response.url)
+        if response.css("header img.crayons-article__cover__image"):
+            post.add_css("image", "header img.crayons-article__cover__image::attr(src)")
+        elif response.css("div.crayons-article__main img"):
+            post.add_css("image", "div.crayons-article__main img::attr(src)")
+        else: 
+            post.add_value("image", "")
         yield post.load_item()
         yield scrapy.Request(response.url, callback=self.parse) # Regresamos a la pagina principal de 'https://dev.to/'
 
