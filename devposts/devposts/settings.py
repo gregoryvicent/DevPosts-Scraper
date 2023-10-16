@@ -12,6 +12,9 @@ BOT_NAME = "devposts"
 SPIDER_MODULES = ["devposts.spiders"]
 NEWSPIDER_MODULE = "devposts.spiders"
 
+# Scrapeops Key
+SCRAPEOPS_API_KEY = "39657068-1198-4666-8254-2a9d55fd2ef7"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "devposts (+http://www.yourdomain.com)"
@@ -51,15 +54,18 @@ ROBOTSTXT_OBEY = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
-    "devposts.middlewares.DevpostsDownloaderMiddleware": 543,
+    # "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+    # "devposts.middlewares.DevpostsDownloaderMiddleware": 543,
+    "scrapeops_scrapy.middleware.retry.RetryMiddleware": 550,
+    "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
 }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    "scrapy.extensions.telnet.TelnetConsole": None,
-#}
+EXTENSIONS = {
+    # "scrapy.extensions.telnet.TelnetConsole": None,
+    "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
+}
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
