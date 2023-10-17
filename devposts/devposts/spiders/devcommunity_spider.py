@@ -2,6 +2,7 @@ import scrapy
 from devposts.itemLoaders.devCommunityPostsLoader import DevCommunityPostsLoader # ItemLoader para el analisis de los datos
 from devposts.items import DevCommunityPostItem # Esquema para los datos de este Spider
 
+
 # Spider que hace web scraping en 'https://dev.to/'
 class DevCommunitySpider(scrapy.Spider):
     name = "devCommunity"

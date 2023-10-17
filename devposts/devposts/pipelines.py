@@ -10,4 +10,6 @@ from itemadapter import ItemAdapter
 
 class DevpostsPipeline:
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        adapter["title"] = adapter["title"] + "+++++++++++++++++++"
         return item
