@@ -53,24 +53,24 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    # "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
-    # "devposts.middlewares.DevpostsDownloaderMiddleware": 543,
-    "scrapeops_scrapy.middleware.retry.RetryMiddleware": 550,
-    "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     # "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+#     # "devposts.middlewares.DevpostsDownloaderMiddleware": 543,
+#     "scrapeops_scrapy.middleware.retry.RetryMiddleware": 550,
+#     "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-EXTENSIONS = {
-    # "scrapy.extensions.telnet.TelnetConsole": None,
-    "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
-}
+# EXTENSIONS = {
+#     # "scrapy.extensions.telnet.TelnetConsole": None,
+#     "scrapeops_scrapy.extension.ScrapeOpsMonitor": 500,
+# }
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "devposts.pipelines.DevpostsPipeline": 300,
+    "devposts.pipelines.DevpostsStoreJsonPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
