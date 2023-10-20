@@ -1,5 +1,4 @@
 import scrapy
-
 from devposts.items import PostItem
 
 # Spider que extrae información de los posts del dia de https://genbeta.com
@@ -18,4 +17,5 @@ class GenbetaSpider(scrapy.Spider):
             post["image"] = article.css("img::attr(src)").get()
             post["date"] = article.css("time::attr(datetime)").get()
             yield post 
+
 
