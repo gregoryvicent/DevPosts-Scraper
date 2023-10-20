@@ -7,7 +7,6 @@
 # useful for handling different item types with a single interface
 import json
 from itemadapter import ItemAdapter
-from scrapy.exporters import JsonLinesItemExporter
 
 
 class DevpostsStoreJsonPipeline:
